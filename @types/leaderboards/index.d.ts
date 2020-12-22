@@ -3,11 +3,11 @@ declare type LeaderboardTimings = "realtime" | "realtime_noloads" | "ingame"
 declare type LeaderboardLinks = [
     {
         rel: "game",
-        url: string
+        uri: string
     },
     {
         rel: "category",
-        url: string
+        uri: string
     }
 ]
 
@@ -21,6 +21,7 @@ declare interface LeaderboardData {
     emulators: boolean | null,
     video_only: boolean,
     timing: LeaderboardTimings,
+    // eslint-disable-next-line @typescript-eslint/ban-types
     values: object,
     runs: [
         {

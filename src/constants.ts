@@ -8,5 +8,6 @@ export const Constants = {
     GAMETYPE_ENDPOINT: "/gametypes",
     GENRE_ENDPOINT: "/genres",
     GUEST_ENDPOINT: "/guests",
-    LEADERBOARD_ENDPOINT: "/leaderboards"
+    LEADERBOARD_ENDPOINT: "/leaderboards",
+    LEVEL_ENDPOINT: "/levels"
 }

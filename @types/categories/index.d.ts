@@ -5,19 +5,19 @@ declare type CategoryPlayer = "exactly" | "up-to"
 declare type CategoryLinks =  [
     {
         rel: "self",
-        url: string
+        uri: string
     },
     {
         rel: "games",
-        url: string
+        uri: string
     },
     {
         rel: "variables",
-        url: string
+        uri: string
     },
     {
         rel: "runs",
-        url: string
+        uri: string
     },
 ]
 

@@ -1,11 +1,11 @@
 declare type EngineLinks = [
     {
         rel: "self",
-        url: string
+        uri: string
     },
     {
         rel: "games",
-        url: string
+        uri: string
     }
 ]
 

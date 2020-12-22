@@ -1,11 +1,11 @@
 declare type GuestLinks = [
     {
         rel: "self",
-        url: string
+        uri: string
     },
     {
         rel: "runs",
-        url: string
+        uri: string
     }
 ]
 

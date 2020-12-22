@@ -7,6 +7,7 @@ import { GameTypeManager } from "./managers/gameTypes"
 import { GenreManager } from "./managers/genres"
 import { GuestManager } from "./managers/guests"
 import { LeaderboardManager } from "./managers/leaderboards"
+import { LevelManager } from "./managers/levels"
 
 export class Client {
     public token: string | undefined
@@ -19,6 +20,7 @@ export class Client {
     public genres: GenreManager
     public guests: GuestManager
     public leaderboards: LeaderboardManager
+    public levels: LevelManager
 
     constructor(token?: string) {
         this.token = token
@@ -31,6 +33,7 @@ export class Client {
         this.genres = new GenreManager(Constants.GENRE_ENDPOINT)
         this.guests = new GuestManager(Constants.GUEST_ENDPOINT)
         this.leaderboards =  new LeaderboardManager(Constants.LEADERBOARD_ENDPOINT)
+        this.levels = new LevelManager(Constants.LEVEL_ENDPOINT)
         //TODO: Cache for managers and whatnot because this seems important for something high level like this.
         //TODO: Profile/Client user data, although that's probably gonna go under a manager maybe? Remember to extend User (when I make it) if it works.
     }

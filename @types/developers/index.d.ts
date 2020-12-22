@@ -1,11 +1,11 @@
 declare type DeveloperLinks = [
     {
         rel: "self",
-        url: string 
+        uri: string 
     },
     {
         rel: "games",
-        link: string
+        uri: string
     }
 ]
 

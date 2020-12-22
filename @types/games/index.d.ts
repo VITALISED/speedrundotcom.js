@@ -28,47 +28,47 @@ declare type GameAssets = {
 declare type GameLinks = [
     {
         rel: "self",
-        url: string,
+        uri: string,
     },
     {
         rel: "runs",
-        url: string,
+        uri: string,
     },
     {
         rel: "levels",
-        url: string,
+        uri: string,
     },
     {
         rel: "categories",
-        url: string,
+        uri: string,
     },
     {
         rel: "variables",
-        url: string,
+        uri: string,
     },
     {
         rel: "records",
-        url: string,
+        uri: string,
     },
     {
         rel: "series",
-        url: string,
+        uri: string,
     },
     {
         rel: "base-game",
-        url: string,
+        uri: string,
     } | null,
     {
         rel: "derived-games",
-        url: string,
+        uri: string,
     },
     {
         rel: "romhacks",
-        url: string,
+        uri: string,
     } | null,
     {
         rel: "leaderboards",
-        url: string,
+        uri: string,
     },
 ]
 

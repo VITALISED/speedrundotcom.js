@@ -1,11 +1,11 @@
 declare type GenreLinks = [
     {
         rel: "self",
-        url: string
+        uri: string
     },
     {
         rel: "games",
-        url: string
+        uri: string
     }
 ]
 
