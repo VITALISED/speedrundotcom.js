@@ -98,7 +98,7 @@ declare interface GameData {
     developers: string[] | null,
     publishers: string[] | null,
     moderators: GameModerators,
-    created: string | null,
+    created: Date | null,
     assets: GameAssets,
     links: GameLinks,
 }
