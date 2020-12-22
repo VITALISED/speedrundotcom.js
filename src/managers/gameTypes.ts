@@ -1,5 +1,5 @@
 import { GameType } from "../structures/gameTypes"
-import { BaseManager } from "./base"
+import { BaseManager } from "./base/base"
 
 export class GameTypeManager extends BaseManager {
     constructor(endpoint: string) {

@@ -1,5 +1,5 @@
 import { Level } from "../structures/levels"
-import { BaseManager } from "./base"
+import { BaseManager } from "./base/base"
 
 export class LevelManager extends BaseManager {
     constructor(endpoint: string) {

@@ -1,7 +1,7 @@
 import { Constants } from "../constants"
 import { BulkGame } from "../structures/games/bulkGame"
 import { Game } from "../structures/games/games"
-import { BaseManager } from "./base"
+import { BaseManager } from "./base/base"
 
 export class GameManager extends BaseManager {
     constructor(endpoint: string) {

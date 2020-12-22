@@ -1,4 +1,4 @@
-import { Constants } from "../constants"
+import { Constants } from "../../constants"
 // If someone knows why it wants to error as an import, please tell me.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const fetch = require("node-fetch")
