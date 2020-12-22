@@ -1,5 +1,5 @@
-import { Leaderboard } from "../structures/leaderboards";
-import { BaseManager } from "./base";
+import { Leaderboard } from "../structures/leaderboards"
+import { BaseManager } from "./base"
 
 export class LeaderboardManager extends BaseManager {
     constructor(endpoint: string) {

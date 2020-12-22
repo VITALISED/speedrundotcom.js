@@ -1,5 +1,5 @@
-import { Genre } from "../structures/genre";
-import { BaseManager } from "./base";
+import { Genre } from "../structures/genres"
+import { BaseManager } from "./base"
 
 export class GenreManager extends BaseManager {
     constructor(endpoint: string) {

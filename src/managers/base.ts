@@ -1,4 +1,6 @@
 import { Constants } from "../constants"
+// If someone knows why it wants to error as an import, please tell me.
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const fetch = require("node-fetch")
 
 export class BaseManager {
@@ -11,7 +13,7 @@ export class BaseManager {
     }
 
     protected async _fetch<T>(params?: string): Promise<T> {
-        let headers;
+        let headers
         
         this.token ? 
             headers = {
