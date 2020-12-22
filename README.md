@@ -1,7 +1,14 @@
 # Speedrundotcom.js
 
-### Very, very WIP Preview. Don't actually try to use this yet
+## Very, very WIP Preview. Don't actually try to use this yet
 
 Expect a write up here when this thing's ready, I can't be bothered right now.
 
-also I really need to write some comments and documentation holy.
+## Todo
+
+- Pagination management
+- Caching
+- Actual full coverage
+- Probably other stuff that I can't think of
+
+If you've found this on a whim and want to help out, add me on discord: **VITALISED#7081**

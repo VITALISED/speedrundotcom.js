@@ -9,5 +9,6 @@ export const Constants = {
     GENRE_ENDPOINT: "/genres",
     GUEST_ENDPOINT: "/guests",
     LEADERBOARD_ENDPOINT: "/leaderboards",
-    LEVEL_ENDPOINT: "/levels"
+    LEVEL_ENDPOINT: "/levels",
+    PLATFORM_ENDPOINT: "/platforms"
 }

@@ -1,4 +1,8 @@
-declare type LeaderboardTimings = "realtime" | "realtime_noloads" | "ingame"
+declare enum LeaderboardTimings {
+    "realtime",
+    "realtime_noloads",
+    "ingame",
+}
 
 declare type LeaderboardLinks = [
     {
@@ -20,7 +24,7 @@ declare interface LeaderboardData {
     region: string | null,
     emulators: boolean | null,
     video_only: boolean,
-    timing: LeaderboardTimings,
+    timing: keyof LeaderboardTimings,
     // eslint-disable-next-line @typescript-eslint/ban-types
     values: object,
     runs: [

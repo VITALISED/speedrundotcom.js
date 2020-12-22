@@ -1,6 +1,12 @@
-declare type CategoryType = "per-game" | "per-level"
+declare enum CategoryType {
+    "per_game",
+    "per_level",
+}
 
-declare type CategoryPlayer = "exactly" | "up-to"
+declare enum CategoryPlayer {
+    "exactly",
+    "up_to",
+}
 
 declare type CategoryLinks =  [
     {
@@ -25,10 +31,10 @@ declare interface CategoryData {
     id: string,
     name: string,
     weblink: string,
-    type: CategoryType,
+    type: keyof CategoryType,
     rules: string,
     players: {
-        type: CategoryPlayer
+        type: keyof CategoryPlayer
         value: number
     },
     miscellaneous: boolean,

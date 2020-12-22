@@ -35,6 +35,7 @@ export class BaseManager {
         const res = await fetch(Constants.API_URL + this.endpoint + isParams, init)
         const json = await res.json()
 
+        //TODO: Parse JSON to replace "-" with "_", cant wait to implement this for post/put/del
         return json.data
     }
 }
