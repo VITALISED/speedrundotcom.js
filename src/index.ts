@@ -1,3 +1,5 @@
+import { Client } from "./client"
+
 // The basic stuff
 export * from "./client"
 export * from "./constants"
@@ -17,7 +19,7 @@ export * from "./structures/notifications"
 export * from "./structures/users"
 
 // Managers
-export * from "./managers/base/base"
+export * from "./base/manager"
 export * from "./managers/categories"
 export * from "./managers/developers"
 export * from "./managers/engines"
