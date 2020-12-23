@@ -8,6 +8,7 @@ Expect a write up here when this thing's ready, I can't be bothered right now.
 
 - Pagination management
 - Caching
+- Ways to manage child structures because im stupid
 - Actual full coverage
 - Probably other stuff that I can't think of
 

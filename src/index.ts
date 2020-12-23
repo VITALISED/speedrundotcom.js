@@ -1,5 +1,3 @@
-import { Client } from "./client"
-
 // The basic stuff
 export * from "./client"
 export * from "./constants"
@@ -16,6 +14,7 @@ export * from "./structures/guests"
 export * from "./structures/leaderboards"
 export * from "./structures/levels"
 export * from "./structures/notifications"
+export * from "./structures/users"
 
 // Managers
 export * from "./managers/base/base"
@@ -29,11 +28,4 @@ export * from "./managers/guests"
 export * from "./managers/leaderboards"
 export * from "./managers/levels"
 export * from "./managers/notifications"
-
-const client = new Client()
-
-const doathing = async () => {
-    console.log(await client.games.getBulk())
-}
-
-doathing()
+export * from "./managers/users"
