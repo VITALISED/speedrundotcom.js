@@ -1,5 +1,3 @@
-import { Client } from "./client"
-
 // The basic stuff
 export * from "./client"
 export * from "./constants"
