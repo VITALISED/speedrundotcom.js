@@ -1,5 +1,5 @@
 import { User } from "../structures/users"
-import { BaseManager } from "./base/base"
+import { BaseManager } from "../base/manager"
 
 export class UserManager extends BaseManager {
     constructor(endpoint: string) {

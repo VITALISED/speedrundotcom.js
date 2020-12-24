@@ -1,4 +1,4 @@
-import { BaseManager } from "./base/base"
+import { BaseManager } from "../base/manager"
 import { Category } from "../structures/categories"
 
 export class CategoryManager extends BaseManager {

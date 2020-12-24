@@ -1,5 +1,5 @@
 import { Notification } from "../structures/notifications"
-import { BaseManager } from "./base/base"
+import { BaseManager } from "../base/manager"
 
 export class NotificiationManager extends BaseManager {
     constructor(endpoint: string, token: string) {

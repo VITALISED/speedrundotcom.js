@@ -1,5 +1,5 @@
 import { Guest } from "../structures/guests"
-import { BaseManager } from "./base/base"
+import { BaseManager } from "../base/manager"
 
 export class GuestManager extends BaseManager {
     constructor(endpoint: string) {
