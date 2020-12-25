@@ -13,7 +13,8 @@ export class Gateway {
         this.options = options
     }
 
-    protected async _fetch<T>(params?: string | SpeedrunResolvable): Promise<T> {
+    //TODO: Touch this up
+    protected async _fetch<T>(params?: string): Promise<T> {
         let headers
         
         this.token ? 
@@ -27,7 +28,7 @@ export class Gateway {
                 "User-Agent": "speedrundotcom.js Client"
             }
         
-        const isParams = this._isNullStringify<string | SpeedrunResolvable | undefined>(params)
+        const isParams = this._isNullStringify<string | undefined>(params)
         // This is a precaution just in case we can't call the endpoint within the constructor and plan on only use params.
         const isEndpoint = this._isNullStringify<string | undefined>(this.endpoint)
 
@@ -44,5 +45,12 @@ export class Gateway {
 
     private _isNullStringify<T extends unknown>(object: T): T | "" {
         return object ? object : ""
-    } 
+    }
+
+    private _parseJSON(object: any): any {
+        for (const key in Object.keys(object)) {
+            const newKey = key.replace("-", "_")
+            object[key] = object[newKey]
+        }
+    }
 }

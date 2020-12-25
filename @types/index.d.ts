@@ -1,4 +1,1 @@
-declare interface SpeedrunResolvable {
-    rel: string,
-    uri: string
-}
+//TODO: Definitely type checking for resolving and MAYBE some gateway stuff??

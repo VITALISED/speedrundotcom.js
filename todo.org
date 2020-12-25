@@ -1,0 +1,15 @@
+* This file exists, remember that.
+
+** Types
+*** TODO Touch up links to be an interface??, maybe an interface could also extend that type but im not sure how you'd do it :/
+
+** Base? (come up with a better name later)
+*** TODO Seriously, get that JSON parser done.
+*** TODO Rework constructor, it's all very cluttered and doesn't work how it did in my head.
+*** TODO Pagination
+
+** Structures
+*** Finish this ://////
+
+** Managers
+*** Maybe use all embeds in every request?
