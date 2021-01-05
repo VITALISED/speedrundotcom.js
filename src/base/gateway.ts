@@ -14,7 +14,7 @@ export class Gateway {
     }
 
     //TODO: Touch this up
-    protected async _fetch<T>(params?: string): Promise<T> {
+    protected async _fetch<T>(params?: string): Promise<T | undefined> {
         let headers
         
         this.token ? 
@@ -28,22 +28,27 @@ export class Gateway {
                 "User-Agent": "speedrundotcom.js Client"
             }
         
-        const isParams = this._isNullStringify<string | undefined>(params)
+        const parsedParams = this._nullStringify<string | undefined>(params)
         // This is a precaution just in case we can't call the endpoint within the constructor and plan on only use params.
-        const isEndpoint = this._isNullStringify<string | undefined>(this.endpoint)
+        const parsedEndpoint = this._nullStringify<string | undefined>(this.endpoint)
 
         const init: RequestInit = {
             headers: headers,
         }
 
-        const res = await fetch(Constants.API_URL + isEndpoint + isParams, init)
+        const res = await fetch(Constants.API_URL + parsedEndpoint + parsedParams, init)
         const json = await res.json()
 
-        //TODO: Parse JSON to replace "-" with "_", cant wait to implement this for post/put/del
-        return json.data
+        if (res.message) {
+            console.error(`SR.COM Error: ${res.message}`)
+        } else {
+            //TODO: Parse JSON to replace "-" with "_", cant wait to implement this for post/put/del
+            return json.data
+        }
+        return undefined
     }
 
-    private _isNullStringify<T extends unknown>(object: T): T | "" {
+    private _nullStringify<T extends unknown>(object: T): T | "" {
         return object ? object : ""
     }
 
