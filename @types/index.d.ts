@@ -1,1 +1,8 @@
-//TODO: Definitely type checking for resolving and MAYBE some gateway stuff??
+declare type Resolvable = {
+    rel: string,
+    uri: string
+}
+
+declare interface StructureData {
+    //TODO: This
+}

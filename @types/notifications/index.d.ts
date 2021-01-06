@@ -3,7 +3,7 @@ declare enum NotificationStatus {
     "unread"
 }
 
-declare type NotificationLink = "run" | "game"
+// declare type NotificationLink = "run" | "game"
 
 declare type NotificationItem = "post" | "guide" | NotificationLink
 
@@ -15,8 +15,5 @@ declare interface NotificationData {
         rel: NotificationItem,
         uri: string
     },
-    links: {
-        rel: NotificationLink,
-        uri: string
-    }
+    links: Resolvable[]
 }

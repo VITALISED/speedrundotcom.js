@@ -4,16 +4,16 @@ declare enum LeaderboardTimings {
     "ingame",
 }
 
-declare type LeaderboardLinks = [
-    {
-        rel: "game",
-        uri: string
-    },
-    {
-        rel: "category",
-        uri: string
-    }
-]
+// declare type LeaderboardLinks = [
+//     {
+//         rel: "game",
+//         uri: string
+//     },
+//     {
+//         rel: "category",
+//         uri: string
+//     }
+// ]
 
 declare interface LeaderboardData {
     weblink: string,
@@ -45,4 +45,5 @@ declare interface LeaderboardData {
             run: RunData
         }
     ],
+    links: Resolvable[]
 }

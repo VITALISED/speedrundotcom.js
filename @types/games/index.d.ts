@@ -25,52 +25,52 @@ declare type GameAssets = {
     foreground: GameImageOptions | null,
 }
 
-declare type GameLinks = [
-    {
-        rel: "self",
-        uri: string,
-    },
-    {
-        rel: "runs",
-        uri: string,
-    },
-    {
-        rel: "levels",
-        uri: string,
-    },
-    {
-        rel: "categories",
-        uri: string,
-    },
-    {
-        rel: "variables",
-        uri: string,
-    },
-    {
-        rel: "records",
-        uri: string,
-    },
-    {
-        rel: "series",
-        uri: string,
-    },
-    {
-        rel: "base-game",
-        uri: string,
-    } | null,
-    {
-        rel: "derived-games",
-        uri: string,
-    },
-    {
-        rel: "romhacks",
-        uri: string,
-    } | null,
-    {
-        rel: "leaderboards",
-        uri: string,
-    },
-]
+// declare type GameLinks = [
+//     {
+//         rel: "self",
+//         uri: string,
+//     },
+//     {
+//         rel: "runs",
+//         uri: string,
+//     },
+//     {
+//         rel: "levels",
+//         uri: string,
+//     },
+//     {
+//         rel: "categories",
+//         uri: string,
+//     },
+//     {
+//         rel: "variables",
+//         uri: string,
+//     },
+//     {
+//         rel: "records",
+//         uri: string,
+//     },
+//     {
+//         rel: "series",
+//         uri: string,
+//     },
+//     {
+//         rel: "base-game",
+//         uri: string,
+//     } | null,
+//     {
+//         rel: "derived-games",
+//         uri: string,
+//     },
+//     {
+//         rel: "romhacks",
+//         uri: string,
+//     } | null,
+//     {
+//         rel: "leaderboards",
+//         uri: string,
+//     },
+// ]
 
 declare interface GameData {
     id: string,
@@ -100,5 +100,5 @@ declare interface GameData {
     moderators: GameModerators,
     created: Date | null,
     assets: GameAssets,
-    links: GameLinks,
+    links: Resolvable[],
 }

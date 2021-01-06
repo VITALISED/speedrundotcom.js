@@ -1,9 +1,15 @@
 import { Gateway } from "./gateway"
 
 export class Structure extends Gateway {
-    constructor(endpoint?: string, token?: string) {
+    public data: StructureData
+
+    constructor(data: StructureData, endpoint?: string, token?: string) {
         super(endpoint, token)
+        this.data = data
     }
 
-    // Similar for managers, future-proofing if structures are gonna need their own specific function calls/props
+    async resolve<T extends Structure> (resolvable: Resolvable): Promise<T> {
+        //TODO: Somehow create something that elegantly gets the type of structure and creates it without some huge if statement. **USE THE BLOODY `rel` FIELD!!**
+        throw "unimplemented"
+    }
 }

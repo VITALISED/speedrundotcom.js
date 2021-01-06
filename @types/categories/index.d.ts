@@ -8,24 +8,24 @@ declare enum CategoryPlayer {
     "up_to",
 }
 
-declare type CategoryLinks =  [
-    {
-        rel: "self",
-        uri: string
-    },
-    {
-        rel: "games",
-        uri: string
-    },
-    {
-        rel: "variables",
-        uri: string
-    },
-    {
-        rel: "runs",
-        uri: string
-    },
-]
+// declare type CategoryLinks =  [
+//     {
+//         rel: "self",
+//         uri: string
+//     },
+//     {
+//         rel: "games",
+//         uri: string
+//     },
+//     {
+//         rel: "variables",
+//         uri: string
+//     },
+//     {
+//         rel: "runs",
+//         uri: string
+//     },
+// ]
 
 declare interface CategoryData {
     id: string,
@@ -38,5 +38,5 @@ declare interface CategoryData {
         value: number
     },
     miscellaneous: boolean,
-    links: CategoryLinks,
+    links: Resolvable[],
 }

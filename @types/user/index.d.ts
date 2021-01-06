@@ -27,24 +27,24 @@ declare enum UserRole {
     "programmer",
 }
 
-declare type UserLinks = [
-    {
-        rel: "self",
-        uri: string
-    },
-    {
-        rel: "runs",
-        uri: string
-    },
-    {
-        rel: "games",
-        uri: string
-    },
-    {
-        rel: "personal-bests",
-        uri: string
-    }
-]
+// declare type UserLinks = [
+//     {
+//         rel: "self",
+//         uri: string
+//     },
+//     {
+//         rel: "runs",
+//         uri: string
+//     },
+//     {
+//         rel: "games",
+//         uri: string
+//     },
+//     {
+//         rel: "personal-bests",
+//         uri: string
+//     }
+// ]
 
 declare interface UserData {
     id: string,
@@ -87,5 +87,5 @@ declare interface UserData {
     speedrunslive: {
         uri: string | null
     }
-    links: UserLinks
+    links: Resolvable[]
 }
