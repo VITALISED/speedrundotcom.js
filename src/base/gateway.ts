@@ -1,4 +1,5 @@
 import { Constants } from "../constants"
+import { SRAPIError } from "../error"
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const fetch = require("node-fetch")
 
@@ -39,13 +40,12 @@ export class Gateway {
         const res = await fetch(Constants.API_URL + parsedEndpoint + parsedParams, init)
         const json = await res.json()
 
-        if (res.message) {
-            console.error(`SR.COM Error: ${res.message}`)
+        if (json.message) {
+            throw new SRAPIError(json.status, json.message)
         } else {
             //TODO: Parse JSON to replace "-" with "_", cant wait to implement this for post/put/del
             return json.data
         }
-        return undefined
     }
 
     private _nullStringify<T extends unknown>(object: T): T | "" {
