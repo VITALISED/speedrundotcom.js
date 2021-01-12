@@ -1,4 +1,3 @@
-import { Client } from "../client"
 import { Gateway } from "./gateway"
 
 export class Structure extends Gateway {

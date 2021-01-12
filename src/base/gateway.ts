@@ -48,7 +48,9 @@ export class Gateway {
 
                 return response.json()
             }).then((json: { data: T}) => {
-                return json.data
+                return this._parseJSON(json.data)
+            }).then((parsedJson: T) => {
+                return parsedJson
             })
 
         return res
@@ -62,6 +64,7 @@ export class Gateway {
         for (const key in Object.keys(object)) {
             const newKey = key.replace("-", "_")
             object[key] = object[newKey]
+            delete object[key]
         }
     }
 }
