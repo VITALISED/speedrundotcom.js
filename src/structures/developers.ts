@@ -1,7 +1,7 @@
-export class Developer {
-    public data: DeveloperData
+import { Structure } from "../base/structure"
 
+export class Developer extends Structure {
     constructor(data: DeveloperData) {
-        this.data = data
+        super(data)
     }
 }

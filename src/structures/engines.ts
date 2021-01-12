@@ -1,7 +1,7 @@
-export class Engine {
-    public data: EngineData
+import { Structure } from "../base/structure"
 
+export class Engine extends Structure {
     constructor(data: EngineData) {
-        this.data = data
+        super(data)
     }
 }

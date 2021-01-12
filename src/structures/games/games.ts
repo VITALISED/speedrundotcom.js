@@ -1,7 +1,7 @@
-export class Game {
-    public data: GameData
-    
+import { Structure } from "../../base/structure"
+
+export class Game extends Structure {    
     constructor(data: GameData) {
-        this.data = data
+        super(data)
     }
 }

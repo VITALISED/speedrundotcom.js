@@ -1,9 +1,8 @@
-export class User {
-    public data: UserData
+import { Structure } from "../base/structure"
 
+export class User extends Structure {
     constructor(data: UserData) {
-        this.data = data
+        super(data)
     }
-
     //TODO: Personalbests, preferebly a clean way future me
 }

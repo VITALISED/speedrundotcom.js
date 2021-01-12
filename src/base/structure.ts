@@ -4,8 +4,8 @@ import { Gateway } from "./gateway"
 export class Structure extends Gateway {
     public data: StructureData
 
-    constructor(client: Client, data: StructureData, endpoint?: string, token?: string) {
-        super(client, endpoint, token)
+    constructor(data: StructureData, endpoint?: string, token?: string) {
+        super(endpoint, token)
         this.data = data
     }
 

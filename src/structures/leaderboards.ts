@@ -1,7 +1,7 @@
-export class Leaderboard {
-    public data: LeaderboardData
+import { Structure } from "../base/structure"
 
+export class Leaderboard extends Structure {
     constructor(data: LeaderboardData) {
-        this.data = data
+        super(data)
     }
 }

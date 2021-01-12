@@ -1,7 +1,7 @@
-export class Notification {
-    public data: NotificationData
+import { Structure } from "../base/structure"
 
+export class Notification extends Structure {
     constructor(data: NotificationData) {
-        this.data =  data
+        super(data)
     }
 }

@@ -1,7 +1,7 @@
-export class Platform {
-    public data: PlatformData
+import { Structure } from "../base/structure"
 
+export class Platform extends Structure {
     constructor(data: PlatformData) {
-        this.data = data
+        super(data)
     }
 }

@@ -5,13 +5,12 @@ import { SRAPIError } from "../error"
 const fetch = require("node-fetch")
 
 export class Gateway {
-    client: Client
+    client: Client | undefined
     endpoint: string | undefined
     token: string | undefined
     options: string | undefined
 
-    constructor(client: Client, endpoint?: string, token?: string, options?: string) {
-        this.client = client
+    constructor(endpoint?: string, token?: string, options?: string) {
         this.endpoint = endpoint,
         this.token = token,
         this.options = options
