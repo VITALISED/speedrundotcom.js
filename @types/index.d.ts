@@ -6,3 +6,7 @@ declare type Resolvable = {
 declare interface StructureData {
     //TODO: This
 }
+
+declare type ClientOptions = {
+    token: string
+}

@@ -1,12 +1,13 @@
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 import { Category } from "../structures/categories"
 
 export class CategoryManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client, endpoint: string) {
+        super(client, endpoint)
     }
 
-    async get(id: string): Promise<Category> {
-        return new Category(await this._fetch<CategoryData>(`/${id}`))
+    get(id: string): Category {
+        return new Category(this._fetch<CategoryData>(`/${id}`))
     }
 }

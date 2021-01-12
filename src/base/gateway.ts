@@ -1,21 +1,24 @@
+import { Client } from "../client"
 import { Constants } from "../constants"
 import { SRAPIError } from "../error"
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const fetch = require("node-fetch")
 
 export class Gateway {
+    client: Client
     endpoint: string | undefined
     token: string | undefined
     options: string | undefined
 
-    constructor(endpoint?: string, token?: string, options?: string) {
+    constructor(client: Client, endpoint?: string, token?: string, options?: string) {
+        this.client = client
         this.endpoint = endpoint,
         this.token = token,
         this.options = options
     }
 
     //TODO: Touch this up
-    protected async _fetch<T>(params?: string): Promise<T | undefined> {
+    protected _fetch<T>(params?: string): T {
         let headers
         
         this.token ? 
@@ -37,15 +40,19 @@ export class Gateway {
             headers: headers,
         }
 
-        const res = await fetch(Constants.API_URL + parsedEndpoint + parsedParams, init)
-        const json = await res.json()
+        
+        const res = fetch(Constants.API_URL + parsedEndpoint + parsedParams, init)
+            .then((response: { json: () => T }) => {
+                if (res.message) {
+                    throw new SRAPIError(res.status, res.message)
+                }
 
-        if (json.message) {
-            throw new SRAPIError(json.status, json.message)
-        } else {
-            //TODO: Parse JSON to replace "-" with "_", cant wait to implement this for post/put/del
-            return json.data
-        }
+                return response.json()
+            }).then((json: { data: T}) => {
+                return json.data
+            })
+
+        return res
     }
 
     private _nullStringify<T extends unknown>(object: T): T | "" {

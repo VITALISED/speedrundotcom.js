@@ -1,12 +1,13 @@
 import { Guest } from "../structures/guests"
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 
 export class GuestManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client, endpoint: string) {
+        super(client, endpoint)
     }
 
-    async get(name: string): Promise<Guest> {
-        return new Guest(await this._fetch<GuestData>(`/${name}`))
+    get(name: string): Guest {
+        return new Guest(this._fetch<GuestData>(`/${name}`))
     }
 }

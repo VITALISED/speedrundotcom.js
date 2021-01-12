@@ -1,12 +1,13 @@
 import { Notification } from "../structures/notifications"
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 
 export class NotificiationManager extends BaseManager {
-    constructor(endpoint: string, token: string) {
-        super(endpoint, token)
+    constructor(client: Client, endpoint: string, token: string) {
+        super(client, endpoint, token)
     }
 
-    async get(): Promise<Notification> {
-        return new Notification(await this._fetch<NotificationData>())
+    get(): Notification {
+        return new Notification(this._fetch<NotificationData>())
     }
 }

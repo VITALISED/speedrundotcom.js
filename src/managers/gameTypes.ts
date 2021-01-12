@@ -1,12 +1,13 @@
 import { GameType } from "../structures/gameTypes"
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 
 export class GameTypeManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client, endpoint: string) {
+        super(client, endpoint)
     }
 
-    async get(id: string): Promise<GameType> {
-        return new GameType(await this._fetch<GameTypeData>(`/${id}`))
+    get(id: string): GameType {
+        return new GameType(this._fetch<GameTypeData>(`/${id}`))
     }
 }

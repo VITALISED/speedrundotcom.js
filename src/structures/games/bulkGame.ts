@@ -1,10 +1,11 @@
 import { Structure } from "../../base/structure"
+import { Client } from "../../client"
 
 export class BulkGame extends Structure {
     public data: BulkGameData
 
-    constructor(data: BulkGameData) {
-        super()
+    constructor(client: Client, data: BulkGameData) {
+        super(client, data)
         this.data = data
     }
 }

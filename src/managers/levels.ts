@@ -1,9 +1,10 @@
 import { Level } from "../structures/levels"
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 
 export class LevelManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client, endpoint: string) {
+        super(client, endpoint)
     }
 
     async get(id: string): Promise<Level> {

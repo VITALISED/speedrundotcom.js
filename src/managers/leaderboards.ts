@@ -1,14 +1,15 @@
 import { Leaderboard } from "../structures/leaderboards"
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 
 export class LeaderboardManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client, endpoint: string) {
+        super(client, endpoint)
     }
 
-    async get(game: string, category: string, level?: string): Promise<Leaderboard> {
+    get(game: string, category: string, level?: string): Leaderboard {
         const params = level ? `/${game}/level/${level}/${category}` : `/${game}/category/${category}`
 
-        return new Leaderboard(await this._fetch<LeaderboardData>(params))
+        return new Leaderboard(this._fetch<LeaderboardData>(params))
     }
 }

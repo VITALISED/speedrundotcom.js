@@ -1,10 +1,11 @@
+import { Client } from "../client"
 import { Gateway } from "./gateway"
 
 export class Structure extends Gateway {
     public data: StructureData
 
-    constructor(data: StructureData, endpoint?: string, token?: string) {
-        super(endpoint, token)
+    constructor(client: Client, data: StructureData, endpoint?: string, token?: string) {
+        super(client, endpoint, token)
         this.data = data
     }
 

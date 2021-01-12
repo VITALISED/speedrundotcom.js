@@ -1,12 +1,13 @@
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 import { Developer } from "../structures/developers"
 
 export class DeveloperManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client,endpoint: string) {
+        super(client, endpoint)
     }
 
-    async get(id: string): Promise<Developer> {
-        return new Developer(await this._fetch<DeveloperData>(`/${id}`))
+    get(id: string): Developer {
+        return new Developer(this._fetch<DeveloperData>(`/${id}`))
     }
 }

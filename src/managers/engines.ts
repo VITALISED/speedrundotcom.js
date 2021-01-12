@@ -1,12 +1,13 @@
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 import { Engine } from "../structures/engines"
 
 export class EngineManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client, endpoint: string) {
+        super(client, endpoint)
     }
 
-    async get(id: string): Promise<Engine> {
-        return new Engine(await this._fetch<EngineData>(`/${id}`))
+    get(id: string): Engine {
+        return new Engine(this._fetch<EngineData>(`/${id}`))
     }
 }

@@ -1,12 +1,13 @@
 import { Genre } from "../structures/genres"
 import { BaseManager } from "../base/manager"
+import { Client } from "../client"
 
 export class GenreManager extends BaseManager {
-    constructor(endpoint: string) {
-        super(endpoint)
+    constructor(client: Client, endpoint: string) {
+        super(client, endpoint)
     }
 
-    async get(id: string): Promise<Genre> {
-        return new Genre(await this._fetch<GenreData>(`/${id}`))
+    get(id: string): Genre {
+        return new Genre(this._fetch<GenreData>(`/${id}`))
     }
 }
