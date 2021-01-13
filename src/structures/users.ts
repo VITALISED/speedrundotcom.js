@@ -1,4 +1,5 @@
 import { Structure } from "../base/structure"
+import type { UserData } from "../typings/data/users"
 
 export class User extends Structure {
     constructor(data: UserData) {
