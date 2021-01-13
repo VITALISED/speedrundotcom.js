@@ -1,4 +1,5 @@
 import type { Resolvable } from "../resolvable"
+import type { RunData } from "./runs"
 
 export type UsernameStyleSolid = {
     style: "solid",
