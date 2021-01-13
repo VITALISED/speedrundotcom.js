@@ -3,6 +3,7 @@ import { BulkGame } from "../structures/games/bulkGame"
 import { Game } from "../structures/games/games"
 import { BaseManager } from "../base/manager"
 import { Client } from "../client"
+import type { BulkGameData, GameData } from "../typings/data/games"
 
 export class GameManager extends BaseManager {
     constructor(client: Client, endpoint: string) {

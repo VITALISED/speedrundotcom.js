@@ -1,6 +1,7 @@
 import { BaseManager } from "../base/manager"
 import { Client } from "../client"
 import { Developer } from "../structures/developers"
+import type { DeveloperData } from "../typings/data/developers"
 
 export class DeveloperManager extends BaseManager {
     constructor(client: Client,endpoint: string) {

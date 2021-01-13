@@ -5,7 +5,6 @@ import { SRAPIError } from "../error"
 const fetch = require("node-fetch")
 
 export class Gateway {
-    client: Client | undefined
     endpoint: string | undefined
     token: string | undefined
     options: string | undefined
@@ -16,8 +15,8 @@ export class Gateway {
         this.options = options
     }
 
-    //TODO: Touch this up
     protected _fetch<T>(params?: string): T {
+        // Not an ideal way to do headers, it works though and no one's gonna notice yeah?
         let headers
         
         this.token ? 

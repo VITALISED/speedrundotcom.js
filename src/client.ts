@@ -9,6 +9,7 @@ import { GuestManager } from "./managers/guests"
 import { LeaderboardManager } from "./managers/leaderboards"
 import { LevelManager } from "./managers/levels"
 import { PlatformManager } from "./managers/platforms"
+import type { ClientOptions } from "./typings/client"
 
 export class Client {
     public token: string | undefined

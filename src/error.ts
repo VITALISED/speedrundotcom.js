@@ -4,10 +4,7 @@ export class SRAPIError extends Error {
     constructor(status: number, ...params: string[]) {
         super(...params)
 
-        if(Error.captureStackTrace) {
-            Error.captureStackTrace(this, SRAPIError)
-        }
-
+        this.stack = new Error().stack
         this.status = status
     }
 }

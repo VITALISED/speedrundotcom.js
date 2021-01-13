@@ -1,11 +1,6 @@
-// declare type PlatformLinks = [
+// declare type GuestLinks = [
 //     {
 //         rel: "self",
-//         uri: string
-//     },
-//     {
-
-//         rel: "games",
 //         uri: string
 //     },
 //     {
@@ -14,9 +9,9 @@
 //     }
 // ]
 
-declare interface PlatformData {
-    id: string,
+import { Resolvable } from "../resolvable"
+
+export interface GuestData {
     name: string,
-    released: number,
     links: Resolvable[],
 }

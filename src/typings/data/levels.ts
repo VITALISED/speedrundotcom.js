@@ -17,7 +17,9 @@
 //     }
 // ]
 
-declare interface LevelData {
+import type { Resolvable } from "../resolvable"
+
+export interface LevelData {
     id: string,
     name: string,
     weblink: string,

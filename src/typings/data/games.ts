@@ -1,16 +1,18 @@
-declare type GameRuntimes = "realtime" | "realtime_noupload" | "ingame"
+import type { Resolvable } from "../resolvable"
 
-declare type GameModerators = {
+export type GameRuntimes = "realtime" | "realtime_noupload" | "ingame"
+
+export type GameModerators = {
     [key: string]: "moderator" | "super-moderator";
 }
 
-declare type GameImageOptions = {
+export type GameImageOptions = {
     url: string,
     width: number,
     height: number,
 }
 
-declare type GameAssets = {
+export type GameAssets = {
     logo: GameImageOptions,
     cover_tiny: GameImageOptions,
     cover_small: GameImageOptions,
@@ -72,7 +74,17 @@ declare type GameAssets = {
 //     },
 // ]
 
-declare interface GameData {
+export interface BulkGameData {
+    id: string,
+    names: {
+        international: string,
+        japanese: string | null
+    },
+    abbreviation: string,
+    weblink: string,
+}
+
+export interface GameData {
     id: string,
     names: {
         international: string,

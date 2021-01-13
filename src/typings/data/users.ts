@@ -1,4 +1,6 @@
-declare type UsernameStyleSolid = {
+import type { Resolvable } from "../resolvable"
+
+export type UsernameStyleSolid = {
     style: "solid",
     color: {
         light: string,
@@ -6,7 +8,7 @@ declare type UsernameStyleSolid = {
     }
 }
 
-declare type UsernameStyleGradient = {
+export type UsernameStyleGradient = {
     style: "gradient"
     color_from: {
         light: string,
@@ -18,7 +20,7 @@ declare type UsernameStyleGradient = {
     }
 }
 
-declare enum UserRole {
+export enum UserRole {
     "banned",
     "user",
     "trusted",
@@ -46,7 +48,7 @@ declare enum UserRole {
 //     }
 // ]
 
-declare interface UserData {
+export interface UserData {
     id: string,
     name: {
         international: string,

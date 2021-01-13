@@ -1,6 +1,7 @@
 import { Guest } from "../structures/guests"
 import { BaseManager } from "../base/manager"
 import { Client } from "../client"
+import type { GuestData } from "../typings/data/guests"
 
 export class GuestManager extends BaseManager {
     constructor(client: Client, endpoint: string) {

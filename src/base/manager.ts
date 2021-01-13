@@ -2,6 +2,8 @@ import { Client } from "../client"
 import { Gateway } from "./gateway"
 
 export class BaseManager extends Gateway {
+    public client: Client
+
     constructor(client: Client, endpoint?: string, token?: string, options?: string) {
         super(endpoint, token, options)
 

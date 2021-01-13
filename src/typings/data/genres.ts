@@ -1,15 +1,18 @@
-// declare type GuestLinks = [
+import type { Resolvable } from "../resolvable"
+
+// declare type GenreLinks = [
 //     {
 //         rel: "self",
 //         uri: string
 //     },
 //     {
-//         rel: "runs",
+//         rel: "games",
 //         uri: string
 //     }
 // ]
 
-declare interface GuestData {
+export interface GenreData {
+    id: string,
     name: string,
     links: Resolvable[],
 }

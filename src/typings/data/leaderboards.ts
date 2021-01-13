@@ -1,4 +1,6 @@
-declare enum LeaderboardTimings {
+import type { Resolvable } from "../resolvable"
+
+export enum LeaderboardTimings {
     "realtime",
     "realtime_noloads",
     "ingame",
@@ -15,7 +17,7 @@ declare enum LeaderboardTimings {
 //     }
 // ]
 
-declare interface LeaderboardData {
+export interface LeaderboardData {
     weblink: string,
     game: string,
     category: string,

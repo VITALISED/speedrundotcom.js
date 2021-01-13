@@ -1,4 +1,6 @@
 import { Gateway } from "./gateway"
+import type { Resolvable } from "../typings/resolvable"
+import type { StructureData } from "../typings/structure"
 
 export class Structure extends Gateway {
     public data: StructureData

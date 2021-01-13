@@ -1,4 +1,4 @@
-// declare type EngineLinks = [
+// declare type GameTypeLinks = [
 //     {
 //         rel: "self",
 //         uri: string
@@ -9,7 +9,9 @@
 //     }
 // ]
 
-declare interface EngineData {
+import type { Resolvable } from "../resolvable"
+
+export interface GameTypeData {
     id: string,
     name: string,
     links: Resolvable[]
