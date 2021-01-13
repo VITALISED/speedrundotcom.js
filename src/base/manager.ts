@@ -10,4 +10,6 @@ export class BaseManager extends Gateway {
         this.client = client
     }
     // In the future, manager specific functions/props can exist here, this seems better anyway.
+
+    //TODO: refractor GET/PUT/PATCH/DELETE generic methods here
 }

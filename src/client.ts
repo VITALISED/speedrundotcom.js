@@ -11,6 +11,7 @@ import { LeaderboardManager } from "./managers/leaderboards"
 import { LevelManager } from "./managers/levels"
 import { PlatformManager } from "./managers/platforms"
 import { PublisherManager } from "./managers/publishers"
+import { RegionManager } from "./managers/regions"
 import { UserManager } from "./managers/users"
 import { User } from "./structures/users"
 import type { ClientOptions } from "./typings/client"
@@ -30,6 +31,7 @@ export class Client extends Gateway {
     public platforms: PlatformManager
     public users: UserManager
     public publishers: PublisherManager
+    public regions: RegionManager
 
     constructor(options: ClientOptions) {
         super()
@@ -47,6 +49,7 @@ export class Client extends Gateway {
         this.platforms = new PlatformManager(this, Constants.PLATFORM_ENDPOINT)
         this.users = new UserManager(this, Constants.USER_ENDPOINT)
         this.publishers = new PublisherManager(this, Constants.PUBLISHER_ENDPOINT)
+        this.regions = new RegionManager(this, Constants.REGION_ENDPOINT)
         //TODO: Profile/Client user data, although that's probably gonna go under a manager maybe? Remember to extend User (when I make it) if it works.
     }
 

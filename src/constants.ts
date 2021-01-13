@@ -13,5 +13,6 @@ export const Constants = {
     PLATFORM_ENDPOINT: "/platforms",
     USER_ENDPOINT: "/users",
     PROFILE_ENDPOINT: "/profile",
-    PUBLISHER_ENDPOINT: "/publishers"
+    PUBLISHER_ENDPOINT: "/publishers",
+    REGION_ENDPOINT: "/regions"
 }
