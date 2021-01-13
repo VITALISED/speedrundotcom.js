@@ -2,14 +2,16 @@
 
 ## WIP and no where near being finished
 
-Speedrundotcom.js is a fresh new library on the block that's written in typescript. It's a high level API wrapper for speedrun.com with lots of cool features and all that good stuff.
+Speedrundotcom.js is a fresh new library on the block that's written in typescript. It's a high level API wrapper for speedrun.com with lots of cool features and all that good stuff. Forgot to write that it can also be used anonymously.
 
 ### Basic Example
 
 ```ts
 import { Client } from "speedrundotcom.js"
 
-const client = new Client(/*optional API token here :)*/)
+const client = new Client({
+    token: "your optional API token"
+})
 
 const someGame = client.games.get("id")
 
