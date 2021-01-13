@@ -9,6 +9,6 @@ export class UserManager extends BaseManager {
     }
 
     get(id: string): User {
-        return new User(this._fetch<UserData>(id))
+        return new User(this._fetch<UserData>(`/${id}`))
     }
 }

@@ -10,5 +10,6 @@ export const Constants = {
     GUEST_ENDPOINT: "/guests",
     LEADERBOARD_ENDPOINT: "/leaderboards",
     LEVEL_ENDPOINT: "/levels",
-    PLATFORM_ENDPOINT: "/platforms"
+    PLATFORM_ENDPOINT: "/platforms",
+    USER_ENDPOINT: "/users"
 }

@@ -1,13 +1,9 @@
 import { Gateway } from "./gateway"
 import type { Resolvable } from "../typings/resolvable"
-import type { StructureData } from "../typings/structure"
 
 export class Structure extends Gateway {
-    public data: StructureData
-
-    constructor(data: StructureData, endpoint?: string, token?: string) {
-        super(endpoint, token)
-        this.data = data
+    constructor() {
+        super()
     }
 
     async resolve<T extends Structure> (resolvable: Resolvable): Promise<T> {

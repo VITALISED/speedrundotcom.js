@@ -91,3 +91,8 @@ export interface UserData {
     }
     links: Resolvable[]
 }
+
+export interface PersonalBest {
+    place: number,
+    run: RunData,
+}

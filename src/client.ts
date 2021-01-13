@@ -9,6 +9,7 @@ import { GuestManager } from "./managers/guests"
 import { LeaderboardManager } from "./managers/leaderboards"
 import { LevelManager } from "./managers/levels"
 import { PlatformManager } from "./managers/platforms"
+import { UserManager } from "./managers/users"
 import type { ClientOptions } from "./typings/client"
 
 export class Client {
@@ -24,6 +25,7 @@ export class Client {
     public leaderboards: LeaderboardManager
     public levels: LevelManager
     public platforms: PlatformManager
+    public users: UserManager
 
     constructor(options: ClientOptions) {
         this.token = options.token
@@ -38,6 +40,7 @@ export class Client {
         this.leaderboards =  new LeaderboardManager(this, Constants.LEADERBOARD_ENDPOINT)
         this.levels = new LevelManager(this, Constants.LEVEL_ENDPOINT)
         this.platforms = new PlatformManager(this, Constants.PLATFORM_ENDPOINT)
+        this.users = new UserManager(this, Constants.USER_ENDPOINT)
         //TODO: Profile/Client user data, although that's probably gonna go under a manager maybe? Remember to extend User (when I make it) if it works.
     }
 }
