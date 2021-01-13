@@ -1,3 +1,4 @@
+import { Gateway } from "./base/gateway"
 import { Constants } from "./constants"
 import { CategoryManager } from "./managers/categories"
 import { DeveloperManager } from "./managers/developers"
@@ -10,9 +11,10 @@ import { LeaderboardManager } from "./managers/leaderboards"
 import { LevelManager } from "./managers/levels"
 import { PlatformManager } from "./managers/platforms"
 import { UserManager } from "./managers/users"
+import { User } from "./structures/users"
 import type { ClientOptions } from "./typings/client"
 
-export class Client {
+export class Client extends Gateway {
     public token: string | undefined
 
     public games: GameManager
@@ -28,6 +30,7 @@ export class Client {
     public users: UserManager
 
     constructor(options: ClientOptions) {
+        super()
         this.token = options.token
 
         this.games = new GameManager(this, Constants.GAME_ENDPOINT)
@@ -42,5 +45,9 @@ export class Client {
         this.platforms = new PlatformManager(this, Constants.PLATFORM_ENDPOINT)
         this.users = new UserManager(this, Constants.USER_ENDPOINT)
         //TODO: Profile/Client user data, although that's probably gonna go under a manager maybe? Remember to extend User (when I make it) if it works.
+    }
+
+    profile(): User {
+        return new User(this._fetch(Constants.PROFILE_ENDPOINT))
     }
 }

@@ -11,5 +11,6 @@ export const Constants = {
     LEADERBOARD_ENDPOINT: "/leaderboards",
     LEVEL_ENDPOINT: "/levels",
     PLATFORM_ENDPOINT: "/platforms",
-    USER_ENDPOINT: "/users"
+    USER_ENDPOINT: "/users",
+    PROFILE_ENDPOINT: "/profile"
 }

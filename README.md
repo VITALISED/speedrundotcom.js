@@ -21,6 +21,4 @@ If you wanna help out you can add me on Discord with **VITALISED#7081**
 ### Missing Coverage
 
 - Runs
-- Profile
 - Series
-- Publishers
