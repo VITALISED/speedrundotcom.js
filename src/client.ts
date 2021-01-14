@@ -18,6 +18,7 @@ import type { ClientOptions } from "./typings/client"
 
 export class Client extends Gateway {
     public token: string | undefined
+    public pageSize: number | undefined
 
     public games: GameManager
     public categories: CategoryManager
@@ -33,9 +34,10 @@ export class Client extends Gateway {
     public publishers: PublisherManager
     public regions: RegionManager
 
-    constructor(options: ClientOptions) {
+    constructor(options?: ClientOptions) {
         super()
-        this.token = options.token
+        this.token = options?.token
+        this.pageSize = options?.pageSize
 
         this.games = new GameManager(this, Constants.GAME_ENDPOINT)
         this.categories = new CategoryManager(this, Constants.CATEGORY_ENDPOINT)
@@ -50,10 +52,9 @@ export class Client extends Gateway {
         this.users = new UserManager(this, Constants.USER_ENDPOINT)
         this.publishers = new PublisherManager(this, Constants.PUBLISHER_ENDPOINT)
         this.regions = new RegionManager(this, Constants.REGION_ENDPOINT)
-        //TODO: Profile/Client user data, although that's probably gonna go under a manager maybe? Remember to extend User (when I make it) if it works.
     }
 
-    profile(): User {
+    get profile(): User {
         return new User(this._fetch(Constants.PROFILE_ENDPOINT))
     }
 }
