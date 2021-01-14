@@ -1,5 +1,5 @@
 import type { Resolvable } from "../resolvable"
-import type { RunData } from "./runs"
+import type { RunData, RunStatusType } from "./runs"
 
 export enum LeaderboardTimings {
     "realtime",
@@ -18,7 +18,7 @@ export enum LeaderboardTimings {
 //     }
 // ]
 
-export interface LeaderboardData {
+export interface LeaderboardData<T extends RunStatusType> {
     weblink: string,
     game: string,
     category: string,
@@ -33,19 +33,19 @@ export interface LeaderboardData {
     runs: [
         {
             place: number,
-            run: RunData
+            run: RunData<T>
         },
         {
             place: number,
-            run: RunData
+            run: RunData<T>
         },
         {
             place: number,
-            run: RunData
+            run: RunData<T>
         },
         {
             place: number,
-            run: RunData
+            run: RunData<T>
         }
     ],
     links: Resolvable[]

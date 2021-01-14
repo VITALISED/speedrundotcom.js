@@ -1,5 +1,5 @@
 import type { Resolvable } from "../resolvable"
-import type { RunData } from "./runs"
+import type { RunData, RunStatusType } from "./runs"
 
 export type UsernameStyleSolid = {
     style: "solid",
@@ -93,7 +93,7 @@ export interface UserData {
     links: Resolvable[]
 }
 
-export interface PersonalBest {
+export interface PersonalBestData<T extends RunStatusType> {
     place: number,
-    run: RunData,
+    run: RunData<T>,
 }

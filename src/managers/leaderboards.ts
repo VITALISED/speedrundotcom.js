@@ -8,10 +8,10 @@ export class LeaderboardManager extends BaseManager {
         super(client, endpoint)
     }
 
-    get(game: string, category: string, level?: string): Leaderboard {
+    get(game: string, category: string, level?: string): Leaderboard<never> {
         // This checks whether a level is provided
         const params = level ? `/${game}/level/${level}/${category}` : `/${game}/category/${category}`
 
-        return new Leaderboard(this._fetch<LeaderboardData>(params))
+        return new Leaderboard(this._fetch<LeaderboardData<never>>(params))
     }
 }

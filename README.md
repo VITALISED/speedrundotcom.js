@@ -26,3 +26,5 @@ If you wanna help out you can add me on Discord with **VITALISED#7081**
 
 - Runs
 - Series
+
+Sooner or later I can get these nifty lil resolver thingys properly done using generics and custom structures
